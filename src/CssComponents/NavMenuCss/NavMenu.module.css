@@ -1,0 +1,31 @@
+.nav {
+    grid-area: n;
+    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+    0 0 0 2px silver,
+    0.3em 0.3em 1em #050404;
+    height: 350px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #050404;
+}
+
+.item {
+    color: black;
+    padding-top: 20px;
+    transition: 0.5s;
+    max-width: 100px;
+    min-height: 50px;
+    margin: 0 auto;
+    text-align: center;
+    vertical-align: middle;
+    transition: 0.5s;
+}
+
+.item:hover {
+    cursor: pointer;
+    border: 1px solid silver;
+    border-radius: 10px;
+    transition: 0.5s;
+}
