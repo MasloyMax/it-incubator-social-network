@@ -1,7 +1,15 @@
 import StyleProfileAvatarContent from "../../CssComponents/ProfileCss/ProfileAvatarContent.module.css";
 import React from "react";
 
-const ProfileAvatarContent = () =>{
+type ProfileAvatarContentPropsType = {
+    name: string,
+    data: string,
+    city: string
+    education: string
+    website: string
+}
+
+const ProfileAvatarContent = (props:ProfileAvatarContentPropsType) =>{
     return(
         <div>
             <div className={StyleProfileAvatarContent.container}>
@@ -10,13 +18,13 @@ const ProfileAvatarContent = () =>{
                      alt=""/>
                 <div className={StyleProfileAvatarContent.info_profile}>
                     <div className={StyleProfileAvatarContent.h2_title}>
-                        <h2>my name</h2>
+                        <h2>{props.name}</h2>
                     </div>
                     <div>
-                        <p>Date</p>
-                        <p>City</p>
-                        <p>Education</p>
-                        <p>Web site</p>
+                        <p>{props.data}</p>
+                        <p>{props.city}</p>
+                        <p>{props.education}</p>
+                        <p>{props.website}</p>
                     </div>
                 </div>
             </div>

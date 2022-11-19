@@ -2,10 +2,11 @@ import React from "react";
 import StyleFeedPosts from "../../CssComponents/PostsCss/FeedPosts.module.css"
 
 type FeedPostsTypeProps = {
-    value:number
+    text:string
+    like: number
 }
 
-const FeedPosts = (props:any) => {
+const FeedPosts = (props:FeedPostsTypeProps) => {
     return (
         <div>
             <div className={StyleFeedPosts.item}>
@@ -16,8 +17,9 @@ const FeedPosts = (props:any) => {
                     </p>
                 </div>
                 <div>
-                    <span>
-                      <button>like</button>
+                    <span className={StyleFeedPosts.block}>
+                      <button>like --{props.like}</button>
+                        <p></p>
                     </span>
                 </div>
             </div>
@@ -25,5 +27,6 @@ const FeedPosts = (props:any) => {
         </div>
     )
 }
+
 
 export default FeedPosts;
