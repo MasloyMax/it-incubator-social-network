@@ -2,7 +2,8 @@ import React from "react";
 import styleProfile from "../../CssComponents/ProfileCss/Profile.module.css";
 import ProfileHeaderContent from "../../comoponents/Profile/ProfileHeaderContent";
 import ProfileAvatarContent from "../../comoponents/Profile/ProfileAvatarContent";
-import Posts from "../Posts/Posts";
+import CreatePosts from "../Posts/CreatePosts";
+import FeedPosts from "../Posts/FeedPosts";
 
 
 const Profile = () => {
@@ -10,7 +11,10 @@ const Profile = () => {
         <div className={styleProfile.content}>
             <ProfileHeaderContent/>
             <ProfileAvatarContent/>
-            <Posts/>
+            <CreatePosts/>
+            <FeedPosts/>
+            <FeedPosts/>
+            <FeedPosts/>
         </div>
     )
 }
