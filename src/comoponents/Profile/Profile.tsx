@@ -12,9 +12,9 @@ const Profile = () => {
             <ProfileHeaderContent/>
             <ProfileAvatarContent/>
             <CreatePosts/>
-            <FeedPosts/>
-            <FeedPosts/>
-            <FeedPosts/>
+            <FeedPosts text = 'i am web developer is react and TypeScript'/>
+            <FeedPosts text = 'My name is Max'/>
+            <FeedPosts text = 'hello, my social network!'/>
         </div>
     )
 }
