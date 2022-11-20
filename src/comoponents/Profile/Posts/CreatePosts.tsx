@@ -1,6 +1,6 @@
 import React from "react";
-import StylePost from '../../CssComponents/PostsCss/Posts.module.css'
-import StyleFeedPosts from "../../CssComponents/PostsCss/FeedPosts.module.css";
+import StylePost from '../../../CssComponents/PostsCss/Posts.module.css'
+import StyleFeedPosts from "../../../CssComponents/PostsCss/FeedPosts.module.css";
 
 const CreatePosts = () => {
     return (
@@ -9,10 +9,10 @@ const CreatePosts = () => {
                 <div>
                     <p>My posts</p>
                 </div>
-                <form action="src/comoponents/Posts/CreatePosts.tsx">
+                <form action="src/comoponents/Profile/Posts/CreatePosts.tsx">
                     <input className={StylePost.post_input} type="text" placeholder='your news...'/>
                 </form>
-                <form action="src/comoponents/Posts/CreatePosts.tsx">
+                <form action="src/comoponents/Profile/Posts/CreatePosts.tsx">
                     <button className={StylePost.button_send}>send</button>
                 </form>
             </div>
