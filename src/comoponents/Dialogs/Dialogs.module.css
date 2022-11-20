@@ -1,0 +1,19 @@
+.dialogs{
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+    padding: 10px;
+}
+
+.dialogs_items{
+    padding: 10px;
+}
+
+.massage{
+ padding: 10px;
+}
+
+.dialogs_items .active{
+    padding: 10px;
+    color: green;
+    text-decoration: none;
+}

@@ -1,23 +1,24 @@
 import React from "react";
 import styleNavMenu from '../../../CssComponents/NavMenuCss/NavMenu.module.css';
+import {NavLink} from "react-router-dom";
 
 const NavMenu = () => {
     return (
-        <nav className={styleNavMenu.nav}>
-            <div className={styleNavMenu.item}>
-                <a href="/profile">Profile</a>
+        <nav className={`${styleNavMenu.nav} ${styleNavMenu.item}`}>
+            <div className={styleNavMenu.block_button}>
+                <NavLink to="/profile" className={navData => navData.isActive ? styleNavMenu.active : styleNavMenu.item }>Profile</NavLink>
             </div>
-            <div className={styleNavMenu.item}>
-                <a href="/dialogs">Massages</a>
+            <div className={styleNavMenu.block_button}>
+                <NavLink to="/massages" className={Masseges => Masseges.isActive ? styleNavMenu.active : styleNavMenu.item }>Massages</NavLink>
             </div>
-            <div className={styleNavMenu.item}>
-                <a href="/news">News</a>
+            <div className={styleNavMenu.block_button}>
+                <NavLink to="/news" className={News => News.isActive ? styleNavMenu.active : styleNavMenu.item }>News</NavLink>
             </div>
-            <div className={styleNavMenu.item}>
-                <a href="/music">Music</a>
+            <div className={styleNavMenu.block_button}>
+                <NavLink to="/music" className={Music => Music.isActive ? styleNavMenu.active : styleNavMenu.item }>Music</NavLink>
             </div>
-            <div className={styleNavMenu.item}>
-                <a href="/settings">Settings</a>
+            <div className={styleNavMenu.block_button}>
+                <NavLink to="/settings" className={Settings => Settings.isActive ? styleNavMenu.active : styleNavMenu.item }>Settings</NavLink>
             </div>
         </nav>
     )

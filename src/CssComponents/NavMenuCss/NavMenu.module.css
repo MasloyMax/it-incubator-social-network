@@ -3,26 +3,36 @@
     0 0 0 2px silver,
     0.3em 0.3em 1em #050404;
     height: 350px;
+    min-width: 188px;
 }
 
-nav a {
+nav a{
     text-decoration: none;
     color: #050404;
+
+}
+.active{
+    color: #253475;
+    background-color: silver;
+    border-radius: 20px;
+    padding: 20px;
+    color: white;
 }
 
 .item {
-    color: black;
-    padding-top: 20px;
     transition: 0.5s;
-    max-width: 100px;
-    min-height: 50px;
     margin: 0 auto;
     text-align: center;
     vertical-align: middle;
     transition: 0.5s;
 }
 
-.item:hover {
+.block_button{
+    padding-top: 20px;
+    min-height: 50px;
+}
+
+.block_button:hover{
     cursor: pointer;
     border: 1px solid silver;
     border-radius: 10px;
