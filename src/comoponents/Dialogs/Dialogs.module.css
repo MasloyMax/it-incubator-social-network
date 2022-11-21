@@ -17,8 +17,16 @@
  padding: 10px;
 }
 
-.dialogs_items a.active{
+.dialogs_items a:hover{
+    color: #f0f3f0;
+    background-color: silver;
     padding: 10px;
-    color: green;
-    text-decoration: none;
+    border-radius: 20px;
+}
+
+.active{
+    color: #f0f3f0;
+    background-color: silver;
+    padding: 10px;
+    border-radius: 20px;
 }

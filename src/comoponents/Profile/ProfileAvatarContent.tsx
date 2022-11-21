@@ -8,9 +8,8 @@ type ProfileAvatarContentPropsType = {
     education: string
     website: string
 }
-
-const ProfileAvatarContent = (props:ProfileAvatarContentPropsType) =>{
-    return(
+const ProfileAvatarContent = (props: ProfileAvatarContentPropsType) => {
+    return (
         <div>
             <div className={StyleProfileAvatarContent.container}>
                 <img className={StyleProfileAvatarContent.img}
@@ -29,7 +28,6 @@ const ProfileAvatarContent = (props:ProfileAvatarContentPropsType) =>{
                 </div>
             </div>
         </div>
-
     )
 }
 

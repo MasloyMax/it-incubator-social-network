@@ -1,32 +1,21 @@
 import React from "react";
 import StyleFeedPosts from "../../../CssComponents/PostsCss/FeedPosts.module.css"
 
-type FeedPostsTypeProps = {
-    text: string
-    like: number
-}
+let postData = [
+    {id: 1, text: 'i am web developer is react and TypeScript', like: '1'},
+    {id: 2, text: 'My name is Max', like: '2'},
+    {id: 4, text: 'hello, my social network!', like: '3'}
+]
 
-const FeedPosts = (props: FeedPostsTypeProps) => {
+let generationFeedPosts = postData
+    .map((el) => <FeedPosts text={el.text} like={el.like}/>);
+
+const FeedPosts = (props: any) => {
     return (
         <div>
-            <div className={StyleFeedPosts.item}>
-                <div>
-                    <p>
-                        <img
-                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5faVszR5XQKwYrgak66d8QDijo5m739aLfQ&usqp=CAU"
-                            alt=""/>
-                        {props.text}
-                    </p>
-                </div>
-                <div>
-                    <span className={StyleFeedPosts.block}>
-                      <button>like {props.like}</button>
-                    </span>
-                </div>
-            </div>
+            {generationFeedPosts};
         </div>
     )
 }
-
 
 export default FeedPosts;

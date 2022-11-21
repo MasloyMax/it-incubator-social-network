@@ -14,9 +14,9 @@ const Profile = () => {
                                   city='Voronezh' education='Heaigth'
                                   website="it's him"/>
             <CreatePosts/>
-            <FeedPosts like={1} text = 'i am web developer is react and TypeScript'/>
-            <FeedPosts like={2} text = 'My name is Max'/>
-            <FeedPosts like={3} text = 'hello, my social network!'/>
+            <FeedPosts />
+            <FeedPosts />
+            <FeedPosts />
         </div>
     )
 }
