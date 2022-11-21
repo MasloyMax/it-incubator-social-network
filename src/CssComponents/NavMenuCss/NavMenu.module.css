@@ -16,7 +16,7 @@ nav a{
     background-color: silver;
     border-radius: 20px;
     padding: 20px;
-    color: white;
+    transition: 0.5s;
 }
 
 .item {
@@ -37,4 +37,5 @@ nav a{
     border: 1px solid silver;
     border-radius: 10px;
     transition: 0.5s;
+    background-color: silver;
 }

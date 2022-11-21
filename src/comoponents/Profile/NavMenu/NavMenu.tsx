@@ -9,7 +9,7 @@ const NavMenu = () => {
                 <NavLink to="/profile" className={navData => navData.isActive ? styleNavMenu.active : styleNavMenu.item }>Profile</NavLink>
             </div>
             <div className={styleNavMenu.block_button}>
-                <NavLink to="/massages" className={Masseges => Masseges.isActive ? styleNavMenu.active : styleNavMenu.item }>Massages</NavLink>
+                <NavLink to="/dialogs" className={Masseges => Masseges.isActive ? styleNavMenu.active : styleNavMenu.item }>Massages</NavLink>
             </div>
             <div className={styleNavMenu.block_button}>
                 <NavLink to="/news" className={News => News.isActive ? styleNavMenu.active : styleNavMenu.item }>News</NavLink>

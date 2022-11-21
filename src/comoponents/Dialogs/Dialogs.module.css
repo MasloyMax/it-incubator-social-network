@@ -8,11 +8,16 @@
     padding: 10px;
 }
 
+.dialogs_items a{
+    text-decoration: none;
+    color: #050404;
+}
+
 .massage{
  padding: 10px;
 }
 
-.dialogs_items .active{
+.dialogs_items a.active{
     padding: 10px;
     color: green;
     text-decoration: none;
