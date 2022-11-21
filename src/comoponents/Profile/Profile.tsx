@@ -14,9 +14,6 @@ const Profile = () => {
                                   city='Voronezh' education='Heaigth'
                                   website="it's him"/>
             <CreatePosts/>
-            <FeedPosts />
-            <FeedPosts />
-            <FeedPosts />
         </div>
     )
 }

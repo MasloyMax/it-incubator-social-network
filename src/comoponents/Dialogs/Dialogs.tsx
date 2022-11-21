@@ -2,22 +2,6 @@ import React from "react";
 import StyleDialogs from "./Dialogs.module.css"
 import {NavLink} from "react-router-dom";
 
-let nameData = [{name: 'Dimysh', id: '1'},
-    {name: 'Tanya', id: '2'},
-    {name: 'KOla', id: '3'},
-    {name: 'Misha', id: '4'},
-]//данные имён
-let MassageData = [
-    {massage: 'hi', id: '1'},
-    {massage: 'hihi', id: '2'},
-    {massage: 'hi is', id: '3'},
-]//данные сообщений
-
-let dialogsElements = nameData
-    .map((dialog) => <DialogItem name={dialog.name} id={dialog.id}/>);
-let messegesElemnt = MassageData
-    .map((element) => <DialogsMassage massage={element.massage} id={element.id}/>);
-
 type DialogItemPropsType = {
     name: string
     id: string
@@ -45,17 +29,37 @@ const DialogsMassage = (props: DialogMassagePropsType) => {
     )
 }//метод
 
+let nameData = [{name: 'Dimysh', id: '1'},
+    {name: 'Tanya', id: '2'},
+    {name: 'KOla', id: '3'},
+    {name: 'Misha', id: '4'},
+    {name: 'Valera', id: '5'},
+    {name: 'Dima', id: '6'}
+]//данные имён
+
+let MassageData = [
+    {massage: 'Hello', id: '1'},
+    {massage: 'Hello Hello', id: '2'},
+    {massage: 'Hello Hello Hello Hello', id: '3'},
+    {massage: 'Hello HelloHello HelloHello Hello', id: '4'},
+    {massage: 'Hello HelloHello HelloHello HelloHello Hello', id: '5'},
+    {massage: 'Hello HelloHello HelloHello HelloHello HelloHello Hello', id: '6'},
+]//данные сообщений
+
+let createElementName = nameData.map((d) => <DialogItem name={d.name} id={d.id}/>);
+let createMassege = MassageData.map((m) => <DialogsMassage massage={m.massage} id={m.id}/>);
+
+
 const Dialogs = (props: any) => {
     return (
         <div className={StyleDialogs.dialogs}>
             <div className={StyleDialogs.dialogs_items}>
-                {dialogsElements}
+                {createElementName}
             </div>
             <div className={StyleDialogs.massage}>
-                {messegesElemnt}
+                {createMassege}
             </div>
         </div>
-
     )
 }//родительский метод, который вызывает DialogItems и DialogsMassage с данными из nameData и MassageData
 
