@@ -15,7 +15,7 @@ const Dialogs = (props: any) => {
                 {createElementName}
             </div>
             <div className={StyleDialogs.massage}>
-                {createMassege}dd
+                {createMassege}
             </div>
         </div>
     )

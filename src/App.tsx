@@ -11,9 +11,11 @@ import Settings from "./comoponents/Settings/Settings";
 
 
 function App(props: any) {
-
-    let dialogCompany = <Dialogs names={props.names} massages={props.massages}/>;
-    let profileCompany = <Profile posts={props.posts} PropsProfile={props.PropsProfile}/>;
+    let dialogCompany = <Dialogs names={props.names} massages={props.massages}/>
+    let profileCompany = <Profile posts={props.posts} PropsProfile={props.PropsProfile}/>
+    let newsCompany = <News />
+    let musicCompany = <Music />
+    let settingCompany = <Settings />
     return (
         <BrowserRouter>
             <div className="app-wrapper">
@@ -23,9 +25,9 @@ function App(props: any) {
                     <Routes>
                         <Route path="/dialogs/*" element={dialogCompany}/>
                         <Route path="/profile" element={profileCompany}/>
-                        <Route path='/news/*' element={<News/>}/>
-                        <Route path='/music/*' element={<Music/>}/>
-                        <Route path='/settings/*' element={<Settings/>}/>
+                        <Route path='/news/*' element={newsCompany}/>
+                        <Route path='/music/*' element={musicCompany}/>
+                        <Route path='/settings/*' element={settingCompany}/>
                     </Routes>
                 </div>
             </div>
