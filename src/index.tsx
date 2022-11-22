@@ -9,15 +9,23 @@ let posts = [
     {id: 2, text: 'My name is Max', like: '2'},
     {id: 4, text: 'hello, my social network!', like: '3'},
     {id: 4, text: 'hello, my social network!', like: '3'},
-    {id: 4, text: 'hello, my social network!', like: '3'}
+    {id: 4, text: 'hello, my social network!', like: '3'},
+    {id: 4, text: 'hello, my social neffftwork!', like: '3'}
 ]
+
+let PropsProfile = {
+    name:'masloyMax',
+    city:'Voronizh',
+    education:'Heaigth',
+    website: "it's him"
+}
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App posts={posts}/>
+    <App posts={posts} PropsProfile={PropsProfile}/>
   </React.StrictMode>
 );
 

@@ -13,7 +13,7 @@ import Settings from "./comoponents/Settings/Settings";
 function App(props: any) {
 
     let dialogCompany = <Dialogs dialogsData={props.nameData} messagesData={props.MassageData}/>;
-    let profileCompany = <Profile posts={props.posts}/>;
+    let profileCompany = <Profile posts={props.posts} PropsProfile={props.PropsProfile}/>;
     return (
         <BrowserRouter>
             <div className="app-wrapper">

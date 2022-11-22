@@ -1,14 +1,6 @@
 import React from "react";
 import StylePost from './Posts.module.css'
 import StyleFeedPosts from "../FeedPosts/FeedPosts.module.css";
-import FeedPosts from "../FeedPosts/FeedPosts";
-
-let PropsProfile = {
-    name:'masloyMax',
-    city:'Voronizh',
-    education:'Heaigth',
-    website: "it's him"
-}
 
 const CreatePosts = (props: any) =>{
 
