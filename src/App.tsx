@@ -8,11 +8,12 @@ import Dialogs from "./comoponents/Dialogs/Dialogs";
 import Music from "./comoponents/Music/Music";
 import News from "./comoponents/News/News";
 import Settings from "./comoponents/Settings/Settings";
+import state from "./Redux/state";
 
 
 function App(props: any) {
-    let dialogCompany = <Dialogs names={props.names} massages={props.massages}/>
-    let profileCompany = <Profile posts={props.posts} PropsProfile={props.PropsProfile}/>
+    let dialogCompany = <Dialogs state={props.state.massagesPage}/>
+    let profileCompany = <Profile state={props.state.profilePage}/>
     let newsCompany = <News />
     let musicCompany = <Music />
     let settingCompany = <Settings />

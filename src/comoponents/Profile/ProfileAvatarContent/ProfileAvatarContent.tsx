@@ -10,13 +10,13 @@ const ProfileAvatarContent = (props: any) => {
                      alt=""/>
                 <div className={StyleProfileAvatarContent.info_profile}>
                     <div className={StyleProfileAvatarContent.h2_title}>
-                        <h2>{props.PropsProfile.name}</h2>
+                        <h2>{props.name}</h2>
                     </div>
                     <div>
-                        <p>{props.PropsProfile.data}</p>
-                        <p>{props.PropsProfile.city}</p>
-                        <p>{props.PropsProfile.education}</p>
-                        <p>{props.PropsProfile.website}</p>
+                        <p>{props.data}</p>
+                        <p>{props.city}</p>
+                        <p>{props.education}</p>
+                        <p>{props.website}</p>
                     </div>
                 </div>
             </div>

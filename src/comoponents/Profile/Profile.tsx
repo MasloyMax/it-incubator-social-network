@@ -8,8 +8,8 @@ const Profile = (props:any) => {
     return (
         <div>
             <ProfileHeaderContent/>
-            <ProfileAvatarContent PropsProfile={props.PropsProfile}/>
-            <MyPost posts={props.posts}/>
+            <ProfileAvatarContent PropsProfile={props.state.propsProfile}/>
+            <MyPost posts={props.state.posts}/>
         </div>
     )
 }
