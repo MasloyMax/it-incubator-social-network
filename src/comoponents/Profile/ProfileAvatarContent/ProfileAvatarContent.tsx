@@ -1,14 +1,7 @@
-import StyleProfileAvatarContent from "../../CssComponents/ProfileCss/ProfileAvatarContent.module.css";
+import StyleProfileAvatarContent from "./ProfileAvatarContent.module.css";
 import React from "react";
 
-type ProfileAvatarContentPropsType = {
-    name: string,
-    data: string,
-    city: string
-    education: string
-    website: string
-}
-const ProfileAvatarContent = (props: ProfileAvatarContentPropsType) => {
+const ProfileAvatarContent = (props: any) => {
     return (
         <div>
             <div className={StyleProfileAvatarContent.container}>

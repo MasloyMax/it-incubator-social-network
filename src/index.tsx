@@ -4,12 +4,20 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+let posts = [
+    {id: 1, text: 'i am web developer is react and TypeScript', like: '1'},
+    {id: 2, text: 'My name is Max', like: '2'},
+    {id: 4, text: 'hello, my social network!', like: '3'},
+    {id: 4, text: 'hello, my social network!', like: '3'},
+    {id: 4, text: 'hello, my social network!', like: '3'}
+]
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <App posts={posts}/>
   </React.StrictMode>
 );
 

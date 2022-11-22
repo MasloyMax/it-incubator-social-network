@@ -1,6 +1,5 @@
 import React from "react";
-import StyleFeedPosts from "../../../CssComponents/PostsCss/FeedPosts.module.css"
-
+import StyleFeedPosts from "./FeedPosts.module.css"
 
 
 const FeedPosts = (props: any) => {
@@ -9,9 +8,7 @@ const FeedPosts = (props: any) => {
             <div className={StyleFeedPosts.item}>
                 <div>
                     <p>
-                        <img
-                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5faVszR5XQKwYrgak66d8QDijo5m739aLfQ&usqp=CAU"
-                            alt=""/>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5faVszR5XQKwYrgak66d8QDijo5m739aLfQ&usqp=CAU" alt=""/>
                         {props.text}
                     </p>
                 </div>

@@ -1,4 +1,4 @@
-import styleProfile from "../../CssComponents/ProfileCss/Profile.module.css";
+import styleProfile from "./Profile.module.css";
 import React from "react";
 
 const ProfileHeaderContent = () =>{
