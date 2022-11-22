@@ -7,8 +7,10 @@ import DialogsMassage from "./Massage/Massage";
 
 
 const Dialogs = (props: any) => {
-    let createElementName = props.names.map((d: any) => <DialogItem name={d.name} id={d.id}/>);
-    let createMassege = props.massages.map((m: any) => <DialogsMassage massage={m.massage} id={m.id}/>);
+    let createElementName =
+        props.names.map((d: any) => <DialogItem name={d.name} id={d.id}/>);
+    let createMassege =
+        props.massages.map((m: any) => <DialogsMassage massage={m.massage} id={m.id}/>);
     return (
         <div className={StyleDialogs.dialogs}>
             <div className={StyleDialogs.dialogs_items}>
