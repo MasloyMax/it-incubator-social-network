@@ -12,7 +12,7 @@ import Settings from "./comoponents/Settings/Settings";
 
 function App(props: any) {
 
-    let dialogCompany = <Dialogs dialogsData={props.nameData} messagesData={props.MassageData}/>;
+    let dialogCompany = <Dialogs names={props.names} massages={props.massages}/>;
     let profileCompany = <Profile posts={props.posts} PropsProfile={props.PropsProfile}/>;
     return (
         <BrowserRouter>

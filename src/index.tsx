@@ -20,12 +20,29 @@ let PropsProfile = {
     website: "it's him"
 }
 
+let names = [{name: 'Dimysh', id: '1'},
+    {name: 'Tanya', id: '2'},
+    {name: 'KOla', id: '3'},
+    {name: 'Misha', id: '4'},
+    {name: 'Valera', id: '5'},
+    {name: 'Dima', id: '6'}
+]//данные имён
+
+let massages = [
+    {massage: 'Hello', id: '1'},
+    {massage: 'Hello Hello', id: '2'},
+    {massage: 'Hello Hello Hello Hello', id: '3'},
+    {massage: 'Hello HelloHello HelloHello Hello', id: '4'},
+    {massage: 'Hello HelloHello HelloHello HelloHello Hello', id: '5'},
+    {massage: 'Hello HelloHello HelloHello HelloHello HelloHello Hello', id: '6'},
+]//данные сообщений
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App posts={posts} PropsProfile={PropsProfile}/>
+    <App posts={posts} PropsProfile={PropsProfile} names={names} massages={massages}/>
   </React.StrictMode>
 );
 
