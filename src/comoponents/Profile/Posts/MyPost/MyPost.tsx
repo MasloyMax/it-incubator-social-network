@@ -12,5 +12,4 @@ const MyPost = (props: any) => {
     )
 }
 
-
 export default MyPost;
