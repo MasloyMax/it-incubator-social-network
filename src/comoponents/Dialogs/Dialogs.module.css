@@ -30,3 +30,18 @@
     padding: 10px;
     border-radius: 20px;
 }
+
+.button_style{
+    border-radius: 20px;
+    background-color: #5e6eaf;
+    min-height: 30px;
+    width: 100px;
+    float: right;
+    transition: 0.5s;
+}
+
+.button_style:hover{
+    background-color: #f0f3f0;
+    transition: 0.5s;
+    cursor: pointer;
+}

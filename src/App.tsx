@@ -8,8 +8,6 @@ import Dialogs from "./comoponents/Dialogs/Dialogs";
 import Music from "./comoponents/Music/Music";
 import News from "./comoponents/News/News";
 import Settings from "./comoponents/Settings/Settings";
-import state from "./Redux/state";
-
 
 function App(props: any) {
     let dialogCompany = <Dialogs state={props.state.massagesPage}/>
