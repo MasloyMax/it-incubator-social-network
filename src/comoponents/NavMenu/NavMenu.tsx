@@ -1,8 +1,10 @@
 import React from "react";
 import styleNavMenu from './NavMenu.module.css';
 import {NavLink} from "react-router-dom";
+import Friends from "./Friends/Friends";
 
-const NavMenu = () => {
+const NavMenu = (props:any) => {
+    let createFriends = props.state.namesFriends.map((b:any) => <Friends name={b.name} />)
     return (
         <nav className={`${styleNavMenu.nav} ${styleNavMenu.item}`}>
             <div className={styleNavMenu.block_button}>
@@ -20,8 +22,13 @@ const NavMenu = () => {
             <div className={styleNavMenu.block_button}>
                 <NavLink to="/settings" className={Settings => Settings.isActive ? styleNavMenu.active : styleNavMenu.item }>Settings</NavLink>
             </div>
+            <div>
+                <h2>Friends</h2>
+                <div className={styleNavMenu.container_friends}>
+                    {createFriends}
+                </div>
+            </div>
         </nav>
     )
 }
-
 export default NavMenu;

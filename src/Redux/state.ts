@@ -1,6 +1,6 @@
 let state = {
     profilePage: {
-        posts: [
+        postsPage: [
             {id: 1, text: 'i am web developer is react and TypeScript', like: '1'},
             {id: 2, text: 'My name is Max', like: '2'},
             {id: 3, text: 'hello, mysaadf social network!', like: '3'},
@@ -12,14 +12,13 @@ let state = {
             {id: 9, text: 'hellasdo, my social neffftwork!', like: '3'}
         ],//данные постов
         propsProfile: [
-            {
-            name: 'masloyMax',
-            city: 'Voronizh',
-            education: 'Heaigth',
-            website: "it's him"
-            }
+            {name: 'masloyMax'},
+            {data: '12.01.1994'},
+            {city: 'Voronizh'},
+            {education: 'Heaigth'},
+            {website: "it's him"},
         ],//данные профиля
-    },//посты
+    },//профиль
     massagesPage: {
         names: [{name: 'Dimysh', id: '1'},
             {name: 'Tanya', id: '2'},
@@ -50,7 +49,14 @@ let state = {
             {massage: 'Hello HelloHello HelloHello HelloHello HelloHello Hello', id: '8'},
             {massage: 'Hello HelloHello HelloHello HelloHello HelloHello Hello', id: '8'},
         ]//данные сообщений
-    }//данные сообщений
+    },//данные сообщений
+    sitebar:{
+        namesFriends:[
+            {name: 'Andrew'},
+            {name: 'Sasha'},
+            {name: 'Sveta'},
+        ]
+    }
 }
 
 export default state;

@@ -17,11 +17,12 @@ function App(props: any) {
     let newsCompany = <News />
     let musicCompany = <Music />
     let settingCompany = <Settings />
+    let nawMenuCompany = <NavMenu state={props.state.sitebar}/>;
     return (
         <BrowserRouter>
             <div className="app-wrapper">
                 <Header/>
-                <NavMenu/>
+                {nawMenuCompany}
                 <div className="app-wrapper-content">
                     <Routes>
                         <Route path="/dialogs/*" element={dialogCompany}/>
