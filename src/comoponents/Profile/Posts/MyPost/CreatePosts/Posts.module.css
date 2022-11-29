@@ -3,11 +3,21 @@
 }
 
 .post_input{
-    background: silver;
+    background: #f1f0f0;
     border: none;
     min-height: 50px;
     width: 700px;
+    border-radius: 10px;
+    resize: none;
 }
+
+.post_input::-webkit-input-placeholder       {opacity: 1; transition: opacity 0.3s ease;}
+.post_input:-moz-placeholder                 {opacity: 1; transition: opacity 0.3s ease;}
+.post_input:-ms-input-placeholder            {opacity: 1; transition: opacity 0.3s ease;}
+.post_input:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.3s ease;}
+.post_input:focus::-moz-placeholder          {opacity: 0; transition: opacity 0.3s ease;}
+.post_input:focus:-moz-placeholder           {opacity: 0; transition: opacity 0.3s ease;}
+.post_input:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ease;}
 
 .button_send{
     float: right;

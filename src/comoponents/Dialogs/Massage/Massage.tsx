@@ -13,7 +13,7 @@ const DialogsMassage = (props: any) => {
         <div className={StyleDialogs.massage}>
             {massage}
             <div>
-                <textarea ref={createMassge} placeholder={'text'}/>
+                <textarea className={StyleDialogs.massage_input_text} ref={createMassge} placeholder={'text'}/>
             </div>
             <div>
                 <button onClick={addMassage} className={StyleDialogs.button_style}>Отправить сообщение</button>

@@ -1,15 +1,9 @@
+import {rerenderEntireTree} from "../render";
+
 let state = {
     profilePage: {
         postsPage: [
             {id: 1, text: 'i am web developer is react and TypeScript', like: '1'},
-            {id: 2, text: 'My name is Max', like: '2'},
-            {id: 3, text: 'hello, mysaadf social network!', like: '3'},
-            {id: 4, text: 'hello, mysd social network!', like: '3'},
-            {id: 5, text: 'hello, myasdff social network!', like: '3'},
-            {id: 6, text: 'hello, masdfy social neffftwork!', like: '3'},
-            {id: 7, text: 'hello, masdfy social neffftwork!', like: '3'},
-            {id: 8, text: 'hello, masdfysdfasdf social neffftwork!', like: '3'},
-            {id: 9, text: 'hellasdo, my social neffftwork!', like: '3'}
         ],//данные постов
         propsProfile: [
             {name: 'masloyMax'},
@@ -57,6 +51,16 @@ let state = {
             {name: 'Sveta'},
         ]
     }
+}
+
+export let addPostNew = (postMassage: any) =>{
+    let newPost:any = {
+        id: 10,
+        text: postMassage,
+        like: 0
+    };
+    state.profilePage.postsPage.push(newPost);
+    rerenderEntireTree(state);
 }
 
 export default state;

@@ -45,3 +45,11 @@
     transition: 0.5s;
     cursor: pointer;
 }
+
+.massage_input_text{
+    border-radius: 50px;
+}
+
+textarea{
+    padding: 10px 20px;
+}

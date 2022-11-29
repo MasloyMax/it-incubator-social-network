@@ -7,7 +7,7 @@ const CreatePosts = (props: any) =>{
     let createElementPost:any = React.createRef();
     let addPost:any = () =>{
         let text:any = createElementPost.current.value;
-        alert(text)
+        props.addPostNew(text)
     }
     return (
     <div className={StylePost.block_post}>
