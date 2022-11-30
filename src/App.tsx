@@ -8,14 +8,16 @@ import Dialogs from "./comoponents/Dialogs/Dialogs";
 import Music from "./comoponents/Music/Music";
 import News from "./comoponents/News/News";
 import Settings from "./comoponents/Settings/Settings";
+import {updateChangePostText} from "./Redux/state";
 
 function App(props: any) {
     let dialogCompany = <Dialogs state={props.state.massagesPage}/>
     let profileCompany = <Profile state={props.state.profilePage}
-                                  addPostNew={props.addPostNew}/>
-    let newsCompany = <News />
-    let musicCompany = <Music />
-    let settingCompany = <Settings />
+                                  addPostNew={props.addPostNew}
+                                  updateChangePostText={props.updateChangePostText}/>
+    let newsCompany = <News/>
+    let musicCompany = <Music/>
+    let settingCompany = <Settings/>
     let nawMenuCompany = <NavMenu state={props.state.sitebar}/>;
     return (
         <BrowserRouter>

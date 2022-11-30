@@ -3,12 +3,17 @@ import StylePost from './Posts.module.css'
 import StyleFeedPosts from "../FeedPosts/FeedPosts.module.css";
 
 const CreatePosts = (props: any) =>{
-
     let createElementPost:any = React.createRef();
+
     let addPost:any = () =>{
-        let text:any = createElementPost.current.value;
-        props.addPostNew(text)
+        props.addPostNew()
     }
+
+    let onPostChange = () =>{
+        let text = createElementPost.current.value
+        props.updateChangePostText(text);
+    }
+
     return (
     <div className={StylePost.block_post}>
         <div>
@@ -16,11 +21,14 @@ const CreatePosts = (props: any) =>{
                 <p>My posts</p>
             </div>
             <form action="src/comoponents/Profile/Posts/MyPost/CreatePosts/CreatePosts.tsx">
-                <textarea ref={createElementPost} className={StylePost.post_input} placeholder='your news...' />
+                <textarea ref={createElementPost}
+                          className={StylePost.post_input}
+                          placeholder='your news...'
+                onChange={onPostChange}/>
             </form>
             <form action="src/comoponents/Profile/Posts/MyPost/CreatePosts/CreatePosts.tsx">
                 {/* eslint-disable-next-line @typescript-eslint/no-unused-expressions */}
-                <button onClick={addPost}  className={StylePost.button_send}>send</button>
+                <button onClick={addPost}  className={StylePost.button_send} value="Click" type = "button">send</button>
             </form>
         </div>
         <div>

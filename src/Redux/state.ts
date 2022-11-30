@@ -1,10 +1,13 @@
-import {rerenderEntireTree} from "../render";
+let rerenderEntireTree:any = () =>{
+    console.log('ss')
+}
 
 let state = {
     profilePage: {
         postsPage: [
             {id: 1, text: 'i am web developer is react and TypeScript', like: '1'},
         ],//данные постов
+        newPostText: 'Helllo',
         propsProfile: [
             {name: 'masloyMax'},
             {data: '12.01.1994'},
@@ -42,10 +45,10 @@ let state = {
             {massage: 'Hello HelloHello HelloHello HelloHello HelloHello Hello', id: '8'},
             {massage: 'Hello HelloHello HelloHello HelloHello HelloHello Hello', id: '8'},
             {massage: 'Hello HelloHello HelloHello HelloHello HelloHello Hello', id: '8'},
-        ]//данные сообщений
+        ],//данные сообщений
     },//данные сообщений
-    sitebar:{
-        namesFriends:[
+    sitebar: {
+        namesFriends: [
             {name: 'Andrew'},
             {name: 'Sasha'},
             {name: 'Sveta'},
@@ -53,14 +56,24 @@ let state = {
     }
 }
 
-export let addPostNew = (postMassage: any) =>{
-    let newPost:any = {
+export let addPostNew = () => {
+    let newPost: any = {
         id: 10,
-        text: postMassage,
+        text: state.profilePage.newPostText,
         like: 0
     };
     state.profilePage.postsPage.push(newPost);
+    updateChangePostText('')
     rerenderEntireTree(state);
+}
+
+export let updateChangePostText = (newText:any) =>{
+    state.profilePage.newPostText = newText;
+    rerenderEntireTree(state);
+}
+
+export const subscribe = (observer:any) => {
+    rerenderEntireTree = observer //паттерн обсервер
 }
 
 export default state;
