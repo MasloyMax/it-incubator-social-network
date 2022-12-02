@@ -1,17 +1,21 @@
 import React from "react";
 import StylePost from './Posts.module.css'
 import StyleFeedPosts from "../FeedPosts/FeedPosts.module.css";
+import {addPostActionCreator, addPostChange} from "../../../../../Redux/state";
+
+
 
 const CreatePosts = (props: any) =>{
+
     let createElementPost:any = React.createRef();
 
     let addPost:any = () =>{
-        props.dispatch({type:'ADD-POST'})
+        props.dispatch(addPostActionCreator())
     }
 
     let onPostChange = () =>{
         let text = createElementPost.current.value
-        let action = {type:'ADD-POST-CHANGE', newText: text}
+        let action = addPostChange(text);
         props.dispatch(action);
     }
 
@@ -28,7 +32,6 @@ const CreatePosts = (props: any) =>{
                 onChange={onPostChange}/>
             </form>
             <form action="src/comoponents/Profile/Posts/MyPost/CreatePosts/CreatePosts.tsx">
-                {/* eslint-disable-next-line @typescript-eslint/no-unused-expressions */}
                 <button onClick={addPost}  className={StylePost.button_send} value="Click" type = "button">send</button>
             </form>
         </div>

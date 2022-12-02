@@ -1,4 +1,7 @@
-let store ={
+const ADD_POST = 'ADD-POST'
+const ADD_POST_CHANGE = 'ADD-POST-CHANGE'
+
+let store = {
     _state: {
         profilePage: {
             postsPage: [
@@ -52,37 +55,37 @@ let store ={
             ]
         }
     },
-    getState: function (){
-        return this._state
-    },
-    _callSubscriber: function (props:any) {
+    _callSubscriber: function (props: any) {
         console.log('ss')
     },
-    subscribe: function (observer:any)  {
+    getState: function () {
+        return this._state
+    },
+    subscribe: function (observer: any) {
         this._callSubscriber = observer //паттерн обсервер
     },
-    _addPostNew: function ()  {
-        let newPost: any = {
-            id: 10,
-            text: this._state.profilePage.newPostText,
-            like: 0
-        };
-        this._state.profilePage.postsPage.push(newPost);
-        this._state.profilePage.newPostText = ''
-        this._callSubscriber(this._state);
-    },
-    _updateChangePostText: function (newText:any) {
-        this._state.profilePage.newPostText = newText;
-        this._callSubscriber(this._state);
-    },
-    dispatch: function (action:any){
-        if(action.type === 'ADD-POST'){
-            this._addPostNew()
-        }else if(action.type === 'ADD-POST-CHANGE'){
-           this._updateChangePostText(action.newText)
+    dispatch: function (action: any) {
+        if (action.type === ADD_POST) {
+            let newPost: any = {
+                id: 10,
+                text: this._state.profilePage.newPostText,
+                like: 0
+            };
+            this._state.profilePage.postsPage.push(newPost);
+            this._state.profilePage.newPostText = ''
+            this._callSubscriber(this._state);
+        } else if (action.type === ADD_POST_CHANGE) {
+            this._state.profilePage.newPostText = action.newText;
+            this._callSubscriber(this._state);
         }
-    }
+    },
+}
+export const addPostActionCreator = () => {
+    return {type: ADD_POST}
 }
 
+export const addPostChange = (text: any) => {
+    return {type: ADD_POST_CHANGE, newText: text}
+}
 
 export default store;
