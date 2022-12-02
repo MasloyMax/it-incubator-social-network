@@ -12,8 +12,7 @@ import Settings from "./comoponents/Settings/Settings";
 function App(props: any) {
     let dialogCompany = <Dialogs state={props.state.massagesPage}/>
     let profileCompany = <Profile state={props.state.profilePage}
-                                  addPostNew={props.addPostNew}
-                                  updateChangePostText={props.updateChangePostText}/>
+                                  dispatch={props.dispatch}/>
     let newsCompany = <News/>
     let musicCompany = <Music/>
     let settingCompany = <Settings/>

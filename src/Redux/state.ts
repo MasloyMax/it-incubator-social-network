@@ -58,23 +58,30 @@ let store ={
     _callSubscriber: function (props:any) {
         console.log('ss')
     },
-    addPostNew: function ()  {
+    subscribe: function (observer:any)  {
+        this._callSubscriber = observer //паттерн обсервер
+    },
+    _addPostNew: function ()  {
         let newPost: any = {
             id: 10,
             text: this._state.profilePage.newPostText,
             like: 0
         };
         this._state.profilePage.postsPage.push(newPost);
-        this.updateChangePostText('')
+        this._state.profilePage.newPostText = ''
         this._callSubscriber(this._state);
     },
-    updateChangePostText: function (newText:any) {
+    _updateChangePostText: function (newText:any) {
         this._state.profilePage.newPostText = newText;
         this._callSubscriber(this._state);
     },
-    subscribe: function (observer:any)  {
-        this._callSubscriber = observer //паттерн обсервер
-}
+    dispatch: function (action:any){
+        if(action.type === 'ADD-POST'){
+            this._addPostNew()
+        }else if(action.type === 'ADD-POST-CHANGE'){
+           this._updateChangePostText(action.newText)
+        }
+    }
 }
 
 
