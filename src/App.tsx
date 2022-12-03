@@ -10,7 +10,7 @@ import News from "./comoponents/News/News";
 import Settings from "./comoponents/Settings/Settings";
 
 function App(props: any) {
-    let dialogCompany = <Dialogs state={props.state.massagesPage}/>
+    let dialogCompany = <Dialogs dispatch={props.dispatch} state={props.state.massagesPage}/>
     let profileCompany = <Profile state={props.state.profilePage}
                                   dispatch={props.dispatch}/>
     let newsCompany = <News/>

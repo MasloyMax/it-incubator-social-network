@@ -11,7 +11,7 @@ const Dialogs = (props: any) => {
     let createElementName =
         props.state.names.map((d: any) => <DialogItem name={d.name} id={d.id}/>);
     let createMassege =
-        props.state.massages.map((m: any) => <DialogsMassage massage={m.massage} id={m.id}/>);
+        props.state.massages.map((m: any) => <DialogsMassage dispatch={props.dispatch} massage={m.massage} id={m.id}/>);
     return (
         <div className={StyleDialogs.dialogs}>
             <div className={StyleDialogs.dialogs_items}>

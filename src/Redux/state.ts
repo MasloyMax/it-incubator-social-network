@@ -1,5 +1,6 @@
 const ADD_POST = 'ADD-POST'
 const ADD_POST_CHANGE = 'ADD-POST-CHANGE'
+const ON_CHANGE_MASSAGE = 'ON-CHANGE-MASSAGE'
 
 let store = {
     _state: {
@@ -47,6 +48,7 @@ let store = {
                 {massage: 'Hello HelloHello HelloHello HelloHello HelloHello Hello', id: '8'},
             ],//данные сообщений
         },
+        newMassageObj:{},
         sitebar: {
             namesFriends: [
                 {name: 'Andrew'},
@@ -72,14 +74,24 @@ let store = {
                 like: 0
             };
             this._state.profilePage.postsPage.push(newPost);
-            this._state.profilePage.newPostText = ''
             this._callSubscriber(this._state);
         } else if (action.type === ADD_POST_CHANGE) {
             this._state.profilePage.newPostText = action.newText;
             this._callSubscriber(this._state);
+        } else if(action.type === ON_CHANGE_MASSAGE){
+            let newMassage:any = {
+                id: 10,
+                massages: this._state.newMassageObj
+            }
+            this._state.massagesPage.massages.push(newMassage);
+            this._callSubscriber(this._state);
         }
     },
 }
+export const massageCrator = (text: any) => {
+    return {type: ON_CHANGE_MASSAGE}
+}
+
 export const addPostActionCreator = () => {
     return {type: ADD_POST}
 }
