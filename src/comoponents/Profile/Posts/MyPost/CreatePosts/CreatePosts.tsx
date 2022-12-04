@@ -1,7 +1,7 @@
 import React from "react";
 import StylePost from './Posts.module.css'
 import StyleFeedPosts from "../FeedPosts/FeedPosts.module.css";
-import {addPostActionCreator, addPostChange} from "../../../../../Redux/state";
+import {addPostActionCreator, addPostChange} from "../../../../../Redux/Reduser/profileReduser";
 
 
 

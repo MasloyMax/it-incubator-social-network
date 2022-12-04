@@ -17,4 +17,11 @@ const dialogsReduser = (state: any, action: any) => {
     }
 }
 
+export const addMassageCreator = () => {
+    return {type: SEND_MASSAGE}
+}
+export const updateNewMessageBodyCreator = (body: any) => {
+    return {type: UPDATE_NEW_MASSAGE_BODY, body: body}
+}
+
 export default dialogsReduser

@@ -2,7 +2,7 @@ import React from "react";
 import StyleDialogs from "./Dialogs.module.css"
 import DialogItem from "./Dialog/Dialog";
 import DialogsMassage from "./Massage/Massage";
-import  {addMassageCreator, updateNewMessageBodyCreator} from "../../Redux/state";
+import  {addMassageCreator, updateNewMessageBodyCreator} from "../../Redux/Reduser/dialogsReduser";
 
 const Dialogs = (props: any) => {
     let createElementName = props.state.names.map((d: any) => <DialogItem name={d.name}id={d.id}/>);

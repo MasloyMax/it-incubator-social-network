@@ -1,12 +1,5 @@
-import prodileReduser from "./Reduser/profileReduser";
 import dialogsReduser from "./Reduser/dialogsReduser";
 import profileReduser from "./Reduser/profileReduser";
-
-const UPDATE_NEW_MASSAGE_BODY = 'UPDATE-NEW-MASSAGE-BODY'
-const SEND_MASSAGE = 'SEND-MASSAGE'
-
-const ADD_POST = 'ADD-POST'
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
 
 let store = {
     _state: {
@@ -71,22 +64,5 @@ let store = {
         this._callSubscriber(this._state)
     },
 }
-
-export const addPostActionCreator = () => {
-    return {type: ADD_POST}
-}
-export const addPostChange = (text: any) => {
-    return {type: UPDATE_NEW_POST_TEXT, newText: text}
-}
-
-// --------------------
-
-export const addMassageCreator = () => {
-    return {type: SEND_MASSAGE}
-}
-export const updateNewMessageBodyCreator = (body: any) => {
-    return {type: UPDATE_NEW_MASSAGE_BODY, body: body}
-}
-
 
 export default store;

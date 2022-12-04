@@ -19,5 +19,12 @@ const profileReduser = (state: any, action: any) => {
     }
 }
 
+export const addPostActionCreator = () => {
+    return {type: ADD_POST}
+}
+export const addPostChange = (text: any) => {
+    return {type: UPDATE_NEW_POST_TEXT, newText: text}
+}
+
 
 export default profileReduser
