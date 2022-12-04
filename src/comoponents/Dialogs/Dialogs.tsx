@@ -38,6 +38,6 @@ const Dialogs = (props: any) => {
             </div>
         </div>
     )
-}//родительский метод, который вызывает DialogItems и DialogsMassage с данными из nameData и MassageData
+}
 
 export default Dialogs;

@@ -1,8 +1,12 @@
-const ADD_POST = 'ADD-POST'
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
+import prodileReduser from "./Reduser/profileReduser";
+import dialogsReduser from "./Reduser/dialogsReduser";
+import profileReduser from "./Reduser/profileReduser";
 
 const UPDATE_NEW_MASSAGE_BODY = 'UPDATE-NEW-MASSAGE-BODY'
 const SEND_MASSAGE = 'SEND-MASSAGE'
+
+const ADD_POST = 'ADD-POST'
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
 
 let store = {
     _state: {
@@ -44,7 +48,6 @@ let store = {
             ],//данные сообщений
             newMassageBody: '',
         },
-
         sitebar: {
             namesFriends: [
                 {name: 'Andrew'},
@@ -63,26 +66,9 @@ let store = {
         this._callSubscriber = observer //паттерн обсервер
     },
     dispatch: function (action: any) {
-        if (action.type === ADD_POST) {
-            let newPost: any = {
-                id: 10,
-                text: this._state.profilePage.newPostText,
-                like: 0
-            };
-            this._state.profilePage.postsPage.push(newPost)
-            this._callSubscriber(this._state)
-        } else if (action.type === UPDATE_NEW_POST_TEXT) {
-            this._state.profilePage.newPostText = action.newText
-            this._callSubscriber(this._state)
-        } else if (action.type === UPDATE_NEW_MASSAGE_BODY) {
-            this._state.massagesPage.newMassageBody = action.body
-            this._callSubscriber(this._state)
-        } else if (action.type === SEND_MASSAGE) {
-            let body:any = this._state.massagesPage.newMassageBody
-            this._state.massagesPage.newMassageBody = ''
-            this._state.massagesPage.massages.push({massage: body, id: '7'})
-            this._callSubscriber(this._state)
-        }
+        this._state.profilePage = profileReduser(this._state.profilePage, action)
+        this._state.massagesPage = dialogsReduser(this._state.massagesPage, action)
+        this._callSubscriber(this._state)
     },
 }
 
@@ -99,9 +85,8 @@ export const addMassageCreator = () => {
     return {type: SEND_MASSAGE}
 }
 export const updateNewMessageBodyCreator = (body: any) => {
-    return {type: UPDATE_NEW_MASSAGE_BODY, body:body}
+    return {type: UPDATE_NEW_MASSAGE_BODY, body: body}
 }
-
 
 
 export default store;
