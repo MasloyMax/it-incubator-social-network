@@ -1,6 +1,8 @@
 const ADD_POST = 'ADD-POST'
-const ADD_POST_CHANGE = 'ADD-POST-CHANGE'
-const ON_CHANGE_MASSAGE = 'ON-CHANGE-MASSAGE'
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
+
+const UPDATE_NEW_MASSAGE_BODY = 'UPDATE-NEW-MASSAGE-BODY'
+const SEND_MASSAGE = 'SEND-MASSAGE'
 
 let store = {
     _state: {
@@ -8,7 +10,7 @@ let store = {
             postsPage: [
                 {id: 1, text: 'i am web developer is react and TypeScript', like: '1'},
             ],//данные постов
-            newPostText: 'Helllo',
+            newPostText: '',
             propsProfile: [
                 {name: 'masloyMax'},
                 {data: '12.01.1994'},
@@ -39,16 +41,10 @@ let store = {
                 {massage: 'Hello HelloHello HelloHello Hello', id: '4'},
                 {massage: 'Hello HelloHello HelloHello HelloHello Hello', id: '5'},
                 {massage: 'Hello HelloHello HelloHello HelloHello HelloHello Hello', id: '6'},
-                {massage: 'Hello HelloHello HelloHello HelloHello HelloHello Hello', id: '7'},
-                {massage: 'Hello HelloHello HelloHello HelloHello HelloHello Hello', id: '8'},
-                {massage: 'Hello HelloHello HelloHello HelloHello HelloHello Hello', id: '8'},
-                {massage: 'Hello HelloHello HelloHello HelloHello HelloHello Hello', id: '8'},
-                {massage: 'Hello HelloHello HelloHello HelloHello HelloHello Hello', id: '8'},
-                {massage: 'Hello HelloHello HelloHello HelloHello HelloHello Hello', id: '8'},
-                {massage: 'Hello HelloHello HelloHello HelloHello HelloHello Hello', id: '8'},
             ],//данные сообщений
+            newMassageBody: '',
         },
-        newMassageObj:{},
+
         sitebar: {
             namesFriends: [
                 {name: 'Andrew'},
@@ -73,31 +69,39 @@ let store = {
                 text: this._state.profilePage.newPostText,
                 like: 0
             };
-            this._state.profilePage.postsPage.push(newPost);
-            this._callSubscriber(this._state);
-        } else if (action.type === ADD_POST_CHANGE) {
-            this._state.profilePage.newPostText = action.newText;
-            this._callSubscriber(this._state);
-        } else if(action.type === ON_CHANGE_MASSAGE){
-            let newMassage:any = {
-                id: 10,
-                massages: this._state.newMassageObj
-            }
-            this._state.massagesPage.massages.push(newMassage);
-            this._callSubscriber(this._state);
+            this._state.profilePage.postsPage.push(newPost)
+            this._callSubscriber(this._state)
+        } else if (action.type === UPDATE_NEW_POST_TEXT) {
+            this._state.profilePage.newPostText = action.newText
+            this._callSubscriber(this._state)
+        } else if (action.type === UPDATE_NEW_MASSAGE_BODY) {
+            this._state.massagesPage.newMassageBody = action.body
+            this._callSubscriber(this._state)
+        } else if (action.type === SEND_MASSAGE) {
+            let body:any = this._state.massagesPage.newMassageBody
+            this._state.massagesPage.newMassageBody = ''
+            this._state.massagesPage.massages.push({massage: body, id: '7'})
+            this._callSubscriber(this._state)
         }
     },
-}
-export const massageCrator = (text: any) => {
-    return {type: ON_CHANGE_MASSAGE}
 }
 
 export const addPostActionCreator = () => {
     return {type: ADD_POST}
 }
-
 export const addPostChange = (text: any) => {
-    return {type: ADD_POST_CHANGE, newText: text}
+    return {type: UPDATE_NEW_POST_TEXT, newText: text}
 }
+
+// --------------------
+
+export const addMassageCreator = () => {
+    return {type: SEND_MASSAGE}
+}
+export const updateNewMessageBodyCreator = (body: any) => {
+    return {type: UPDATE_NEW_MASSAGE_BODY, body:body}
+}
+
+
 
 export default store;

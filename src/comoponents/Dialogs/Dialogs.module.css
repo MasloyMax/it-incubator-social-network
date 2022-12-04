@@ -50,6 +50,15 @@
     border-radius: 50px;
 }
 
+.massage_input_text::-webkit-input-placeholder       {opacity: 1; transition: opacity 0.3s ease;}
+.massage_input_text:-moz-placeholder                 {opacity: 1; transition: opacity 0.3s ease;}
+.massage_input_text:-ms-input-placeholder            {opacity: 1; transition: opacity 0.3s ease;}
+.massage_input_text:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.3s ease;}
+.massage_input_text:focus::-moz-placeholder          {opacity: 0; transition: opacity 0.3s ease;}
+.massage_input_text:focus:-moz-placeholder           {opacity: 0; transition: opacity 0.3s ease;}
+.massage_input_text:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ease;}
+
 textarea{
     padding: 10px 20px;
 }
+

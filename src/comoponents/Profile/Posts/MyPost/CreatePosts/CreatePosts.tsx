@@ -6,8 +6,7 @@ import {addPostActionCreator, addPostChange} from "../../../../../Redux/state";
 
 
 const CreatePosts = (props: any) =>{
-
-    let createElementPost:any = React.createRef();
+    let createElementPost:any = React.createRef()
 
     let addPost:any = () =>{
         props.dispatch(addPostActionCreator())
@@ -15,8 +14,8 @@ const CreatePosts = (props: any) =>{
 
     let onPostChange = () =>{
         let text = createElementPost.current.value
-        let action = addPostChange(text);
-        props.dispatch(action);
+        let action = addPostChange(text)
+        props.dispatch(action)
     }
 
     return (
@@ -28,6 +27,7 @@ const CreatePosts = (props: any) =>{
             <form action="src/comoponents/Profile/Posts/MyPost/CreatePosts/CreatePosts.tsx">
                 <textarea ref={createElementPost}
                           className={StylePost.post_input}
+                          value={props.newPostText}
                           placeholder='your news...'
                 onChange={onPostChange}/>
             </form>

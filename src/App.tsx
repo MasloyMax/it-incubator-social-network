@@ -26,7 +26,7 @@ function App(props: any) {
                 <div className="app-wrapper-content">
                     <Routes>
                         <Route path="/dialogs/*" element={dialogCompany}/>
-                        <Route path="/profile" element={profileCompany}/>
+                        <Route path="/profile/*" element={profileCompany}/>
                         <Route path='/news/*' element={newsCompany}/>
                         <Route path='/music/*' element={musicCompany}/>
                         <Route path='/settings/*' element={settingCompany}/>
