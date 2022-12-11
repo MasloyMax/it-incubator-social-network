@@ -10,14 +10,13 @@ import News from "./comoponents/News/News";
 import Settings from "./comoponents/Settings/Settings";
 
 function App(props: any) {
-    let dialogCompany = <Dialogs dispatch={props.dispatch} state={props.state.massagesPage}/>
-    let profileCompany = <Profile state={props.state.profilePage}
+    let dialogCompany = <Dialogs store={props.store} state={props.state.massagesPage}/>
+    let profileCompany = <Profile store={props.store}
                                   dispatch={props.dispatch}/>
     let newsCompany = <News/>
     let musicCompany = <Music/>
     let settingCompany = <Settings/>
-    let nawMenuCompany = <NavMenu state={props.state.sitebar}/>;
-
+    let nawMenuCompany = <NavMenu store={props.store}/>;
     return (
         <BrowserRouter>
             <div className="app-wrapper">

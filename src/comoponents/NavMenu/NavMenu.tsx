@@ -2,9 +2,11 @@ import React from "react";
 import styleNavMenu from './NavMenu.module.css';
 import {NavLink} from "react-router-dom";
 import Friends from "./Friends/Friends";
+import sideBarReduser from "../../Redux/Reduser/sideBarReduser";
 
 const NavMenu = (props:any) => {
-    let createFriends = props.state.namesFriends.map((b:any) => <Friends name={b.name} />)
+    let siteBarState = props.store.getState().sideBarReduser
+    let createFriends = siteBarState.sitebar.namesFriends.map((b:any) => <Friends name={b.name} />)
     return (
         <nav className={`${styleNavMenu.nav} ${styleNavMenu.item}`}>
             <div className={styleNavMenu.block_button}>

@@ -1,15 +1,28 @@
 const UPDATE_NEW_MASSAGE_BODY = 'UPDATE-NEW-MASSAGE-BODY'
 const SEND_MASSAGE = 'SEND-MASSAGE'
 
-const dialogsReduser = (state: any, action: any) => {
+let stateInitiation = {
+    massagesPage: {
+        names: [{name: 'Dimysh', id: '1'},
+            {name: 'Tanya', id: '2'},
+        ],
+        massages: [
+            {massage: 'Hello', id: '1'},
+        ],
+        newMassageBody: '',
+    },
+}
+
+const dialogsReduser = (state:any = stateInitiation, action: any) => {
     switch (action.type) {
         case UPDATE_NEW_MASSAGE_BODY:
-            state.newMassageBody = action.body
+            state.massagesPage.newMassageBody = action.body
+            console.log(state)
             return state
         case SEND_MASSAGE:
-            let body: any = state.newMassageBody
-            state.newMassageBody = ''
-            state.massages.push({massage: body, id: '7'})
+            let body: any = state.massagesPage.newMassageBody
+            state.massagesPage.newMassageBody = ''
+            state.massagesPage.massages.push({massage: body, id: '7'})
             return state
 
         default:

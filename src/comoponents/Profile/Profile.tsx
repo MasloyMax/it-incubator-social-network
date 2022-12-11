@@ -5,10 +5,11 @@ import MyPost from "./Posts/MyPost/MyPost";
 
 const Profile = (props:any) => {
     return (
+
         <div>
             <ProfileHeaderContent/>
-            <ProfileAvatarContent profile={props.state.propsProfile}/>
-            <MyPost posts={props.state.postsPage} dispatch={props.dispatch}/>
+            <ProfileAvatarContent store={props.store}/>
+            <MyPost store={props.store} dispatch={props.dispatch}/>
         </div>
     )
 }

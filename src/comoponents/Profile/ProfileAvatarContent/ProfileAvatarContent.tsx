@@ -2,6 +2,7 @@ import StyleProfileAvatarContent from "./ProfileAvatarContent.module.css";
 import React from "react";
 
 const ProfileAvatarContent = (props: any) => {
+    let profileState = props.store.getState().profileReduser.profilePage.propsProfile
     return (
         <div>
             <div className={StyleProfileAvatarContent.container}>
@@ -10,13 +11,13 @@ const ProfileAvatarContent = (props: any) => {
                      alt=""/>
                 <div className={StyleProfileAvatarContent.info_profile}>
                     <div className={StyleProfileAvatarContent.h2_title}>
-                        <h2>{props.profile[0].name}</h2>
+                        <h2>{profileState[0].name}</h2>
                     </div>
                     <div>
-                        <p>{props.profile[1].data}</p>
-                        <p>{props.profile[2].city}</p>
-                        <p>{props.profile[3].education}</p>
-                        <p>{props.profile[4].website}</p>
+                        <p>{profileState[1].data}</p>
+                        <p>{profileState[2].city}</p>
+                        <p>{profileState[3].education}</p>
+                        <p>{profileState[4].website}</p>
                     </div>
                 </div>
             </div>
