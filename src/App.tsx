@@ -9,9 +9,14 @@ import Music from "./comoponents/Music/Music";
 import News from "./comoponents/News/News";
 import Settings from "./comoponents/Settings/Settings";
 
+type AppType = {
+
+}
+
 function App(props: any) {
-    let dialogCompany = <Dialogs store={props.store} state={props.state.massagesPage}/>
-    let profileCompany = <Profile store={props.store}
+    let dialogCompany = <Dialogs dispatch={props.dispatch}
+                                 state={props.store.getState().dialogsReduser.massagesPage}/>
+    let profileCompany = <Profile state={props.store.getState().profileReduser}
                                   dispatch={props.dispatch}/>
     let newsCompany = <News/>
     let musicCompany = <Music/>

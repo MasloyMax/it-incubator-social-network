@@ -5,20 +5,19 @@ import DialogsMassage from "./Massage/Massage";
 import dialogsReduser, {addMassageCreator, updateNewMessageBodyCreator} from "../../Redux/Reduser/dialogsReduser";
 
 const Dialogs = (props: any) => {
-    let dialogState = props.store.getState().dialogsReduser.massagesPage
-
-    let createElementName = dialogState.names.map((d: any) => <DialogItem name={d.name}id={d.id}/>);
-    let createMassege = dialogState.massages.map((m: any) => <DialogsMassage massage={m.massage} id={m.id}/>);
-    let newMassageBody = dialogState.newMassageBody
+    console.log(props)
+    let createElementName = props.state.names.map((d: any) => <DialogItem name={d.name}id={d.id}/>);
+    let createMassege = props.state.massages.map((m: any) => <DialogsMassage massage={m.massage} id={m.id}/>);
+    let newMassageBody = props.state.newMassageBody
 
     let onSendMassageClick = () =>{
-        props.store.dispatch(addMassageCreator())
+        props.dispatch(addMassageCreator())
     }
 
     let onNewMassageChange = (e:any) => {
         let body = e.target.value;
         console.log(body)
-        props.store.dispatch(updateNewMessageBodyCreator(body));
+        props.dispatch(updateNewMessageBodyCreator(body));
     }
     return (
         <div className={StyleDialogs.dialogs}>

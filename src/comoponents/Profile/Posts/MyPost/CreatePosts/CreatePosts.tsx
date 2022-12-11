@@ -4,6 +4,7 @@ import StyleFeedPosts from "../FeedPosts/FeedPosts.module.css";
 import {addPostActionCreator, addPostChange} from "../../../../../Redux/Reduser/profileReduser";
 
 const CreatePosts = (props: any) => {
+    console.log(props)
     let createElementPost: any = React.createRef()
 
     let addPost: any = () => {

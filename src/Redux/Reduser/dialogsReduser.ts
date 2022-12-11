@@ -1,7 +1,27 @@
 const UPDATE_NEW_MASSAGE_BODY = 'UPDATE-NEW-MASSAGE-BODY'
 const SEND_MASSAGE = 'SEND-MASSAGE'
 
-let stateInitiation = {
+type NamesType = {
+    name:string
+    id:string
+}
+
+type MassagesType={
+    massage: string
+    id: string
+}
+
+type DialogsType = {
+    names: Array<NamesType>
+    massages: Array<MassagesType>
+    newMassageBody: string
+}
+
+type DialogsReduserType = {
+    massagesPage: DialogsType
+}
+
+let stateInitiation: DialogsReduserType = {
     massagesPage: {
         names: [{name: 'Dimysh', id: '1'},
             {name: 'Tanya', id: '2'},
@@ -13,7 +33,7 @@ let stateInitiation = {
     },
 }
 
-const dialogsReduser = (state:any = stateInitiation, action: any) => {
+const dialogsReduser = (state: any = stateInitiation, action: any) => {
     switch (action.type) {
         case UPDATE_NEW_MASSAGE_BODY:
             state.massagesPage.newMassageBody = action.body

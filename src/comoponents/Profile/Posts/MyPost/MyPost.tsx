@@ -3,12 +3,12 @@ import CreatePosts from "./CreatePosts/CreatePosts";
 import FeedPosts from "./FeedPosts/FeedPosts";
 
 const MyPost = (props: any) => {
-    let myPostsState = (props.store.getState().profileReduser.profilePage)
-    let createFeedpost = myPostsState.postsPage.map((b:any) => <FeedPosts text={b.text} like={b.like} />)
+    let createFeedpost = props.state.postsPage.map((b:any) => <FeedPosts text={b.text} like={b.like} />)
+    console.log(props)
     return (
         <div>
             <CreatePosts dispatch={props.dispatch}
-                         posts={props.posts}/>
+                         state={props.state.postsPage}/>
             {createFeedpost}
         </div>
     )
