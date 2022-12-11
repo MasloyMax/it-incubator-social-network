@@ -8,12 +8,16 @@ import Dialogs from "./comoponents/Dialogs/Dialogs";
 import Music from "./comoponents/Music/Music";
 import News from "./comoponents/News/News";
 import Settings from "./comoponents/Settings/Settings";
+import DialogsReduserType from "./Redux/Reduser/dialogsReduser"
+import ProfileReduserType from "./Redux/Reduser/dialogsReduser"
 
-type AppType = {
-
-}
-
+// type AppType = {
+//     dialogs: typeof DialogsReduserType
+//     profile: typeof ProfileReduserType
+//     callBack: () => void
+// }
 function App(props: any) {
+    console.log(props)
     let dialogCompany = <Dialogs dispatch={props.dispatch}
                                  state={props.store.getState().dialogsReduser.massagesPage}/>
     let profileCompany = <Profile state={props.store.getState().profileReduser}

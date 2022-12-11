@@ -4,7 +4,6 @@ import ProfileAvatarContent from "./ProfileAvatarContent/ProfileAvatarContent";
 import MyPost from "./Posts/MyPost/MyPost";
 
 const Profile = (props:any) => {
-    console.log(props)
     return (
         <div>
             <ProfileHeaderContent/>

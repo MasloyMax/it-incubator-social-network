@@ -2,7 +2,6 @@ import StyleProfileAvatarContent from "./ProfileAvatarContent.module.css";
 import React from "react";
 
 const ProfileAvatarContent = (props: any) => {
-    console.log(props)
     return (
         <div>
             <div className={StyleProfileAvatarContent.container}>

@@ -5,7 +5,6 @@ import DialogsMassage from "./Massage/Massage";
 import dialogsReduser, {addMassageCreator, updateNewMessageBodyCreator} from "../../Redux/Reduser/dialogsReduser";
 
 const Dialogs = (props: any) => {
-    console.log(props)
     let createElementName = props.state.names.map((d: any) => <DialogItem name={d.name}id={d.id}/>);
     let createMassege = props.state.massages.map((m: any) => <DialogsMassage massage={m.massage} id={m.id}/>);
     let newMassageBody = props.state.newMassageBody
