@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Dispatch} from 'react';
 import './App.css';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Header from "./comoponents/Header/Header";
@@ -8,19 +8,19 @@ import Dialogs from "./comoponents/Dialogs/Dialogs";
 import Music from "./comoponents/Music/Music";
 import News from "./comoponents/News/News";
 import Settings from "./comoponents/Settings/Settings";
-import DialogsReduserType from "./Redux/Reduser/dialogsReduser"
-import ProfileReduserType from "./Redux/Reduser/dialogsReduser"
+import {AppDispatchType, AppStateType, AppstoreType} from "./Redux/redux-store";
 
-// type AppType = {
-//     dialogs: typeof DialogsReduserType
-//     profile: typeof ProfileReduserType
-//     callBack: () => void
-// }
-function App(props: any) {
+type AppPropsType = {
+    dispatch: AppDispatchType
+    store: AppstoreType
+}
+
+function App(props: AppPropsType) {
+    const state = props.store.getState()
     console.log(props)
     let dialogCompany = <Dialogs dispatch={props.dispatch}
-                                 state={props.store.getState().dialogsReduser.massagesPage}/>
-    let profileCompany = <Profile state={props.store.getState().profileReduser}
+                                 state={state}/>
+    let profileCompany = <Profile state={state}
                                   dispatch={props.dispatch}/>
     let newsCompany = <News/>
     let musicCompany = <Music/>

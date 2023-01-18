@@ -1,48 +1,68 @@
+import {v1} from "uuid";
+
 const UPDATE_NEW_MASSAGE_BODY = 'UPDATE-NEW-MASSAGE-BODY'
 const SEND_MASSAGE = 'SEND-MASSAGE'
 
-type NamesType = {
-    name:string
-    id:string
+type SendMessageActionType = {
+    type: 'SEND-MASSAGE'
+    body: string
 }
 
-type MassagesType={
-    massage: string
+type ChangeNewMessageActionType ={
+    type: 'UPDATE-NEW-MASSAGE-BODY'
+    body: string
+}
+
+export type DialogsActionType = ReturnType<typeof addMassageCreator> | ReturnType<typeof updateNewMessageBodyCreator>
+
+type ActionsType = SendMessageActionType | ChangeNewMessageActionType
+
+type NamesType = {
+    name: string
     id: string
 }
 
-type DialogsType = {
-    names: Array<NamesType>
-    massages: Array<MassagesType>
-    newMassageBody: string
+type MessagesType = {
+    message: string
+    id: string
 }
 
-type DialogsReduserType = {
-    massagesPage: DialogsType
+export type NewMessageBodyType ={
+    newMessageBody: string
 }
 
-let stateInitiation: DialogsReduserType = {
-    massagesPage: {
-        names: [{name: 'Dimysh', id: '1'},
-            {name: 'Tanya', id: '2'},
+export type DialogsReducerType = {
+    names: NamesType[]
+    messages: MessagesType[]
+    newMessageBody: string
+}
+
+export type MessagesPageType ={
+    messagesPage: DialogsReducerType
+}
+
+let stateInitiation: MessagesPageType = {
+    messagesPage: {
+        names: [
+            {name: 'Tanya', id: v1()},
+            {name: 'Dimysh', id: v1()},
         ],
-        massages: [
-            {massage: 'Hello', id: '1'},
+        messages: [
+            {message: 'Hello', id: v1()},
         ],
-        newMassageBody: '',
+        newMessageBody: 'Ну'
     },
 }
 
-const dialogsReduser = (state: any = stateInitiation, action: any) => {
+const dialogsReduser = (state:MessagesPageType = stateInitiation, action: ActionsType) => {
     switch (action.type) {
         case UPDATE_NEW_MASSAGE_BODY:
-            state.massagesPage.newMassageBody = action.body
-            console.log(state)
+           state.messagesPage.newMessageBody= action.body
             return state
         case SEND_MASSAGE:
-            let body: any = state.massagesPage.newMassageBody
-            state.massagesPage.newMassageBody = ''
-            state.massagesPage.massages.push({massage: body, id: '7'})
+            const body: string = state.messagesPage.newMessageBody
+            state.messagesPage.newMessageBody = ''
+            state.messagesPage.messages.push({message: body, id: '7'})
             return state
 
         default:
@@ -53,7 +73,7 @@ const dialogsReduser = (state: any = stateInitiation, action: any) => {
 export const addMassageCreator = () => {
     return {type: SEND_MASSAGE}
 }
-export const updateNewMessageBodyCreator = (body: any) => {
+export const updateNewMessageBodyCreator = (body: string) => {
     return {type: UPDATE_NEW_MASSAGE_BODY, body: body}
 }
 

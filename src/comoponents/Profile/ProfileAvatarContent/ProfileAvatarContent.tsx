@@ -1,7 +1,13 @@
 import StyleProfileAvatarContent from "./ProfileAvatarContent.module.css";
 import React from "react";
+import {AppStateType} from "../../../Redux/redux-store";
+import {PropsProfileType} from "../../../Redux/Reduser/profileReduser";
 
-const ProfileAvatarContent = (props: any) => {
+type PropsType = {
+    state: PropsProfileType[]
+}
+
+const ProfileAvatarContent = (props: PropsType) => {
     return (
         <div>
             <div className={StyleProfileAvatarContent.container}>

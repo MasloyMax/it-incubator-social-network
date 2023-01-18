@@ -3,14 +3,15 @@ import React from "react";
 import App from "./App";
 import store from "./Redux/redux-store";
 
+
+
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
 );
 let rerenderEntireTree:any = () =>{
     root.render(
         <React.StrictMode>
-            <App state={store.getState()}
-                 dispatch={store.dispatch.bind(store)}
+            <App dispatch={store.dispatch.bind(store)}
                  store={store}/>
         </React.StrictMode>
     );

@@ -1,13 +1,25 @@
 const ADD_POST = 'ADD-POST'
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
 
+export type ActionType = NewTextActionType | ChangeTextActionType
+
+type NewTextActionType = {
+    type: 'ADD-POST'
+    newText: string
+}
+
+type ChangeTextActionType ={
+    type: 'UPDATE-NEW-POST-TEXT'
+    newText: string
+}
+
 type PostsPageType = {
     id: number
     text: string
     like: string
 }
 
-type PropsProfileType = {
+export type PropsProfileType = {
     name:string
     data:string
     city:string
@@ -21,7 +33,7 @@ type postType = {
     propsProfile: Array<PropsProfileType>
 }
 
-type ProfileType = {
+export type ProfileType = {
     profilePage: postType
 }
 
@@ -42,7 +54,7 @@ let stateInitiation: ProfileType = {
     },
 }
 
-const profileReduser = (state:any = stateInitiation, action: any) => {
+const profileReduser = (state:any = stateInitiation, action: ActionType) => {
     switch (action.type) {
         case ADD_POST:
             let newPost: any = {
@@ -63,7 +75,7 @@ const profileReduser = (state:any = stateInitiation, action: any) => {
 export const addPostActionCreator = () => {
     return {type: ADD_POST}
 }
-export const addPostChange = (text: any) => {
+export const addPostChange = (text: string) => {
     return {type: UPDATE_NEW_POST_TEXT, newText: text}
 }
 

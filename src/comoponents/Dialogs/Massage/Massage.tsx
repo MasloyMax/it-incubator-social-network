@@ -3,7 +3,7 @@ import StyleDialogs from "./../Dialogs.module.css"
 
 type TypeDialogsMassage = {
     massage: string
-    id: number
+    id: string
 }
 
 const DialogsMassage = (props: TypeDialogsMassage) => {

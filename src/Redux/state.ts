@@ -59,8 +59,7 @@ let store = {
         this._callSubscriber = observer //паттерн обсервер
     },
     dispatch: function (action: any) {
-        this._state.profilePage = profileReduser(this._state.profilePage, action)
-        this._state.massagesPage = dialogsReduser(this._state.massagesPage, action)
+
         this._callSubscriber(this._state)
     },
 }
