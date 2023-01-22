@@ -37,6 +37,7 @@ export type ProfileType = {
     profilePage: postType
 }
 
+
 let stateInitiation: ProfileType = {
     profilePage: {
         postsPage: [
@@ -54,13 +55,13 @@ let stateInitiation: ProfileType = {
     },
 }
 
-const profileReduser = (state:any = stateInitiation, action: ActionType) => {
+const profileReduser = (state:ProfileType = stateInitiation, action: ActionType) => {
     switch (action.type) {
         case ADD_POST:
-            let newPost: any = {
+            let newPost:PostsPageType = {
                 id: 10,
                 text: state.profilePage.newPostText,
-                like: 0
+                like: '0'
             };
             state.profilePage.postsPage.push(newPost)
             return state

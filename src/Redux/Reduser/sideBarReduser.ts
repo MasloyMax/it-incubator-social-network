@@ -1,3 +1,11 @@
+type NamesFriendsType ={
+    name:string
+}
+
+type StateInitiationType = {
+    sitebar: NamesFriendsType
+}
+
 let stateInitiation = {
     sitebar: {
         namesFriends: [

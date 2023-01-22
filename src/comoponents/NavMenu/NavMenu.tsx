@@ -3,8 +3,13 @@ import styleNavMenu from './NavMenu.module.css';
 import {NavLink} from "react-router-dom";
 import Friends from "./Friends/Friends";
 import sideBarReduser from "../../Redux/Reduser/sideBarReduser";
+import {AppstoreType} from "../../Redux/redux-store";
 
-const NavMenu = (props:any) => {
+type PropsType = {
+        store: AppstoreType
+}
+
+const NavMenu = (props:PropsType) => {
     let siteBarState = props.store.getState().sideBarReduser
     let createFriends = siteBarState.sitebar.namesFriends.map((b:any) => <Friends name={b.name} />)
     return (

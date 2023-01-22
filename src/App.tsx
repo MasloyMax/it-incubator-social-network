@@ -17,7 +17,6 @@ type AppPropsType = {
 
 function App(props: AppPropsType) {
     const state = props.store.getState()
-    console.log(props)
     let dialogCompany = <Dialogs dispatch={props.dispatch}
                                  state={state}/>
     let profileCompany = <Profile state={state}
