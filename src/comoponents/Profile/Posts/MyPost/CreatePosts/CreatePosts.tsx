@@ -1,19 +1,32 @@
-import React from "react";
+import React, {LegacyRef} from "react";
 import StylePost from './Posts.module.css'
 import StyleFeedPosts from "../FeedPosts/FeedPosts.module.css";
-import {addPostActionCreator, addPostChange} from "../../../../../Redux/Reduser/profileReduser";
+import {addPostActionCreator, addPostChange, PostsPageType} from "../../../../../Redux/Reduser/profileReduser";
+import {AppStateType} from "../../../../../Redux/redux-store";
 
-const CreatePosts = (props: any) => {
-    let createElementPost: any = React.createRef()
+type PropsType = {
+    onPostChange: (text: string) => void
+    addPost: () => void
+    newText: string
+    posts: PostsPageType[]
+}
 
-    let addPost: any = () => {
-        props.dispatch(addPostActionCreator())
+const CreatePosts = (props: PropsType) => {
+
+    const {onPostChange,addPost} = props
+
+    let createElementPost:any = React.createRef()
+
+    let addPostHandler = () => {
+        addPost()
     }
 
-    let onPostChange = () => {
-        let text = createElementPost.current.value
-        let action = addPostChange(text)
-        props.dispatch(action)
+    let onPostChangeHandler = () => {
+        if(createElementPost.current){
+            let newPostText = createElementPost.current.value
+            onPostChange(newPostText)
+        }
+
     }
 
     return (
@@ -25,12 +38,12 @@ const CreatePosts = (props: any) => {
                 <form action="src/comoponents/Profile/Posts/MyPost/CreatePosts/CreatePosts.tsx">
                 <textarea ref={createElementPost}
                           className={StylePost.post_input}
-                          value={props.newPostText}
+                          value={props.newText}
                           placeholder='your news...'
-                          onChange={onPostChange}/>
+                          onChange={onPostChangeHandler}/>
                 </form>
                 <form action="src/comoponents/Profile/Posts/MyPost/CreatePosts/CreatePosts.tsx">
-                    <button onClick={addPost} className={StylePost.button_send} value="Click" type="button">send
+                    <button onClick={addPostHandler} className={StylePost.button_send} value="Click" type="button">send
                     </button>
                 </form>
             </div>

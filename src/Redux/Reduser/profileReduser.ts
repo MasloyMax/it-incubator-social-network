@@ -13,7 +13,7 @@ type ChangeTextActionType ={
     newText: string
 }
 
-type PostsPageType = {
+export type PostsPageType = {
     id: number
     text: string
     like: string

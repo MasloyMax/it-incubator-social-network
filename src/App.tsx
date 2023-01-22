@@ -19,8 +19,7 @@ function App(props: AppPropsType) {
     const state = props.store.getState()
     let dialogCompany = <Dialogs dispatch={props.dispatch}
                                  state={state}/>
-    let profileCompany = <Profile state={state}
-                                  dispatch={props.dispatch}/>
+    let profileCompany = <Profile store={props.store}/>
     let newsCompany = <News/>
     let musicCompany = <Music/>
     let settingCompany = <Settings/>
