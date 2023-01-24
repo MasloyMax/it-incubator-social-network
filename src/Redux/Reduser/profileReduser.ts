@@ -63,6 +63,7 @@ const profileReduser = (state:ProfileType = stateInitiation, action: ActionType)
                 text: state.profilePage.newPostText,
                 like: '0'
             };
+            state.profilePage.newPostText = ''
             state.profilePage.postsPage.push(newPost)
             return state
         case UPDATE_NEW_POST_TEXT:

@@ -2,7 +2,7 @@ import React from "react";
 import CreatePosts from "./CreatePosts/CreatePosts";
 import FeedPosts from "./FeedPosts/FeedPosts";
 import {AppDispatchType, AppStateType, AppstoreType} from "../../../../Redux/redux-store";
-import MyPostContainer from "../MyPostContainer";
+import MyPostContainer from "./MyPostContainer";
 
 type PropsType = {
    store: AppstoreType

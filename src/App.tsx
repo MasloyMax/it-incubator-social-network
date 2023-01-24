@@ -9,6 +9,7 @@ import Music from "./comoponents/Music/Music";
 import News from "./comoponents/News/News";
 import Settings from "./comoponents/Settings/Settings";
 import {AppDispatchType, AppStateType, AppstoreType} from "./Redux/redux-store";
+import DialogsContainer from "./comoponents/Dialogs/DialogsContainer";
 
 type AppPropsType = {
     dispatch: AppDispatchType
@@ -16,9 +17,8 @@ type AppPropsType = {
 }
 
 function App(props: AppPropsType) {
-    const state = props.store.getState()
-    let dialogCompany = <Dialogs dispatch={props.dispatch}
-                                 state={state}/>
+    let dialogCompany = <DialogsContainer dispatch={props.dispatch}
+                                 store={props.store}/>
     let profileCompany = <Profile store={props.store}/>
     let newsCompany = <News/>
     let musicCompany = <Music/>

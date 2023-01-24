@@ -2,31 +2,26 @@ import React, {ChangeEvent} from "react";
 import StyleDialogs from "./Dialogs.module.css"
 import DialogItem from "./Dialog/Dialog";
 import DialogsMassage from "./Massage/Massage";
-import dialogsReduser, {
-    addMassageCreator, DialogsReducerType,
-    MessagesPageType,
-    updateNewMessageBodyCreator
-} from "../../Redux/Reduser/dialogsReduser";
-import {AppDispatchType, AppStateType, AppstoreType} from "../../Redux/redux-store";
-import {ProfileType} from "../../Redux/Reduser/profileReduser";
+import {DialogsReducerType} from "../../Redux/Reduser/dialogsReduser";
 
 type PropsType = {
-    dispatch: AppDispatchType
-    state: AppStateType
+    onSendMassageClick: () => void
+    onNewMassageChange: (body: string) => void
+    state: DialogsReducerType
 }
 
 const Dialogs = (props: PropsType) => {
-    let createElementName = props.state.dialogsReduser.messagesPage.names.map((d) => <DialogItem name={d.name}id={d.id}/>);
-    let createMassege = props.state.dialogsReduser.messagesPage.messages.map((m) => <DialogsMassage massage={m.message} id={m.id}/>);
-    let newMassageBody = props.state.dialogsReduser.messagesPage.newMessageBody
+    let createElementName = props.state.names.map((d) => <DialogItem name={d.name} id={d.id}/>);
+    let createMassege = props.state.messages.map((m) => <DialogsMassage massage={m.message} id={m.id}/>);
+    let newMassageBody = props.state.newMessageBody
 
-    let onSendMassageClick = () =>{
-        props.dispatch(addMassageCreator())
+    let onSendMassageClick = () => {
+        props.onSendMassageClick()
     }
 
-    let onNewMassageChange = (e:ChangeEvent<HTMLTextAreaElement>) => {
-        let body = e.target.value;
-        props.dispatch(updateNewMessageBodyCreator(body));
+    let onNewMassageChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
+        const body = e.target.value
+        props.onNewMassageChange(body);
     }
     return (
         <div className={StyleDialogs.dialogs}>

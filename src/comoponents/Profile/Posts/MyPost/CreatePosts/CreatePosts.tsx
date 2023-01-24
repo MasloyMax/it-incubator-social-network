@@ -1,4 +1,4 @@
-import React, {LegacyRef} from "react";
+import React, {createRef} from "react";
 import StylePost from './Posts.module.css'
 import StyleFeedPosts from "../FeedPosts/FeedPosts.module.css";
 import {addPostActionCreator, addPostChange, PostsPageType} from "../../../../../Redux/Reduser/profileReduser";
@@ -15,7 +15,7 @@ const CreatePosts = (props: PropsType) => {
 
     const {onPostChange,addPost} = props
 
-    let createElementPost:any = React.createRef()
+    let createElementPost:any= React.createRef()
 
     let addPostHandler = () => {
         addPost()

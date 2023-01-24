@@ -1,8 +1,8 @@
 import React from "react";
-import MyPost from "./MyPost/MyPost";
-import {addPostActionCreator, addPostChange} from "../../../Redux/Reduser/profileReduser";
-import CreatePosts from "./MyPost/CreatePosts/CreatePosts";
-import {AppDispatchType, AppStateType} from "../../../Redux/redux-store";
+import MyPost from "./MyPost";
+import {addPostActionCreator, addPostChange} from "../../../../Redux/Reduser/profileReduser";
+import CreatePosts from "./CreatePosts/CreatePosts";
+import {AppDispatchType, AppStateType} from "../../../../Redux/redux-store";
 
 type PropsType = {
     state: AppStateType
